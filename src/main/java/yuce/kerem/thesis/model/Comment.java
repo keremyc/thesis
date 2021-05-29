@@ -5,11 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Date;
 
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "COMMENT")
 public class Comment {
@@ -27,4 +25,13 @@ public class Comment {
     @ManyToOne
     @JoinColumn(name = "CommnetBy")
     private User commentBy;
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", commentText='" + commentText + '\'' +
+                ", createdAt=" + createdAt +
+                '}';
+    }
 }
