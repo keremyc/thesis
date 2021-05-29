@@ -2,7 +2,6 @@ package yuce.kerem.thesis.dto.mappers;
 
 import yuce.kerem.thesis.dto.RecommendationDto;
 import yuce.kerem.thesis.model.Recommendation;
-import yuce.kerem.thesis.model.WebPage;
 
 import java.util.stream.Collectors;
 

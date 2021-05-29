@@ -7,6 +7,7 @@ import java.util.Set;
 
 @Data
 @Builder
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "USER")
@@ -51,4 +52,16 @@ public class User {
     )
     private Set<WebPage> favoritesWebPages;
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", age=" + age +
+                ", occupation='" + occupation + '\'' +
+                ", eduLevel=" + eduLevel +
+                ", gender=" + gender +
+                '}';
+    }
 }

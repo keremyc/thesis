@@ -5,8 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Set;
 
-@Getter
-@Setter
+
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -27,5 +27,13 @@ public class WebPage {
     @OneToMany(mappedBy = "recommendedWebPage")
     private Set<Recommendation> recommendations;
 
+    @Override
+    public String toString() {
+        return "WebPage{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
 

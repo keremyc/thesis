@@ -6,8 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
-@Getter
-@Setter
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -39,4 +38,14 @@ public class Recommendation {
     @OneToMany
     @JoinColumn(name = "Recommendation")
     private Set<Comment> comments;
+
+    @Override
+    public String toString() {
+        return "Recommendation{" +
+                "id=" + id +
+                ", recommendationText='" + recommendationText + '\'' +
+                ", liked=" + liked +
+                ", createdAt=" + createdAt +
+                '}';
+    }
 }

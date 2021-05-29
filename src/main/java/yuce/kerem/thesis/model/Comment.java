@@ -8,6 +8,7 @@ import java.util.Date;
 @Data
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "COMMENT")
 public class Comment {
