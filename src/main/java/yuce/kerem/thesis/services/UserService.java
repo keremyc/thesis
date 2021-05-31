@@ -9,9 +9,8 @@ import java.util.Optional;
  * @version 1.0
  * @date 5/25/21 4:54 PM
  */
-public interface UserService {
+public interface UserService extends CrudService<User, Long> {
 
-    public Optional<User> getUserById(Long id);
-    public Optional<User> getUserByUsername(String username);
+    public User getUserByUsername(String username);
 
 }

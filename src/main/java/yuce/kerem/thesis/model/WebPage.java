@@ -21,6 +21,9 @@ public class WebPage {
     @Column(name = "Title")
     private String title;
 
+    @Column(name = "Url", unique = true)
+    private String url;
+
     @Column(name = "Description")
     private String description;
 

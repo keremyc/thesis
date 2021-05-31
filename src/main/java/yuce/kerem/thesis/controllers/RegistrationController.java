@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import yuce.kerem.thesis.dto.RegistrationRequest;
 import yuce.kerem.thesis.model.AppUser;
 import yuce.kerem.thesis.model.User;
-import yuce.kerem.thesis.services.AppUserServiceImpl;
+import yuce.kerem.thesis.services.impl.AppUserServiceImpl;
 
 /**
  * @author Kerem(Nurullah)

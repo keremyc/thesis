@@ -1,4 +1,4 @@
-package yuce.kerem.thesis.services;
+package yuce.kerem.thesis.services.impl;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -7,6 +7,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import yuce.kerem.thesis.model.AppUser;
 import yuce.kerem.thesis.repositories.AppUserRepository;
+import yuce.kerem.thesis.services.AppUserService;
 
 import java.util.Optional;
 

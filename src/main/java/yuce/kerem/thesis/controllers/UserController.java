@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import yuce.kerem.thesis.dto.UserDto;
 import yuce.kerem.thesis.dto.mappers.UserMapper;
-import yuce.kerem.thesis.model.User;
-import yuce.kerem.thesis.repositories.UserRepository;
 import yuce.kerem.thesis.services.UserService;
 
 /**
@@ -28,6 +26,6 @@ public class UserController {
 
     @GetMapping("/{username}")
     public UserDto getUser(@PathVariable("username") String username) {
-        return UserMapper.userToUserDto(userService.getUserByUsername(username).get());
+        return UserMapper.userToUserDto(userService.getUserByUsername(username));
     }
 }
