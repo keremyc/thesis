@@ -12,11 +12,11 @@ import yuce.kerem.thesis.services.RecommendationService;
  */
 
 @Service
-public class RecommendationRepositoryImpl implements RecommendationService {
+public class RecommendationServiceImpl implements RecommendationService {
 
     private final RecommendationRepository recRepocitory;
 
-    public RecommendationRepositoryImpl(RecommendationRepository recRepocitory) {
+    public RecommendationServiceImpl(RecommendationRepository recRepocitory) {
         this.recRepocitory = recRepocitory;
     }
 
