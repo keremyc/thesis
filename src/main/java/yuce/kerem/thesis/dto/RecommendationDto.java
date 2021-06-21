@@ -1,5 +1,6 @@
 package yuce.kerem.thesis.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
@@ -21,7 +22,10 @@ public class RecommendationDto {
     private boolean liked;
     private Date createdAt;
     private UserDto recommendedBy;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private WebPageDto recommendedWebPage;
+
     private Set<CommentDto> comments;
 
 }

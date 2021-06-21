@@ -4,10 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 import yuce.kerem.thesis.model.EducationLevel;
 import yuce.kerem.thesis.model.Gender;
-import yuce.kerem.thesis.model.Recommendation;
-import yuce.kerem.thesis.model.WebPage;
-
-import java.util.Set;
 
 /**
  * @author Kerem(Nurullah)
@@ -26,9 +22,6 @@ public class UserDto {
     private String occupation;
     private Gender gender;
     private EducationLevel eduLevel;
-    private Set<WebPageDto> createdWebPages;
-    private Set<RecommendationDto> recommendations;
-    private Set<WebPageDto> favoriteWebPages;
 
     @Override
     public String toString() {

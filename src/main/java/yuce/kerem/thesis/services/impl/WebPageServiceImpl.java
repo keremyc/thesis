@@ -34,9 +34,7 @@ public class WebPageServiceImpl implements WebPageService {
 
     @Override
     public WebPage getByUrl(String url) {
-        return webPageRepository.findByUrl(url).orElseThrow(
-                () -> { throw new RuntimeException("no WebPage with given url"); }
-        );
+        return webPageRepository.findByUrl(url).orElse(null);
     }
 
     @Override

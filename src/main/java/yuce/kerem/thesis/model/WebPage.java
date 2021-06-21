@@ -3,10 +3,12 @@ package yuce.kerem.thesis.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 
-@Data
+@Getter
+@Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,11 +26,12 @@ public class WebPage {
     @Column(name = "Url", unique = true)
     private String url;
 
-    @Column(name = "Description")
+    @Lob
+    @Column(name = "Description", columnDefinition = "CLOB")
     private String description;
 
-    @OneToMany(mappedBy = "recommendedWebPage")
-    private Set<Recommendation> recommendations;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recommendedWebPage")
+    private Set<Recommendation> recommendations = new HashSet<>();
 
     @Override
     public String toString() {
@@ -38,5 +41,14 @@ public class WebPage {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    public void addRecommedation(Recommendation recommendation) {
+        if (recommendations == null) {
+            this.recommendations = new HashSet<>();
+        }
+        recommendations.add(recommendation);
+        recommendation.setRecommendedWebPage(this);
+    }
+
 }
 

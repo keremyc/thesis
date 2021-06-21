@@ -2,8 +2,9 @@ package yuce.kerem.thesis.dto.mappers;
 
 import yuce.kerem.thesis.dto.WebPageDto;
 import yuce.kerem.thesis.model.WebPage;
+import yuce.kerem.thesis.model.WebPageDocument;
 
-import java.util.stream.Collectors;
+import java.util.HashSet;
 
 /**
  * @author Kerem(Nurullah)
@@ -23,11 +24,7 @@ public class WebPageMapper {
                 .id(webPageDto.getId())
                 .title(webPageDto.getTitle())
                 .description(webPageDto.getDescription())
-                .recommendations(
-                        webPageDto.getRecommendations().stream()
-                        .map( r-> RecommendationMapper.recDtoToRec(r) )
-                        .collect(Collectors.toSet())
-                )
+                .url(webPageDto.getUrl())
                 .build();
 
         return webPage;
@@ -44,14 +41,38 @@ public class WebPageMapper {
                 .id(webPage.getId())
                 .title(webPage.getTitle())
                 .description(webPage.getDescription())
-                .recommendations(
-                        webPage.getRecommendations().stream()
-                        .map( r -> RecommendationMapper.recToRecDto(r) )
-                        .collect(Collectors.toSet())
-                )
+                .url(webPage.getUrl())
                 .build();
 
         return webPageDto;
     }
 
+    public static WebPageDto documentToDto(final WebPageDocument document) {
+
+        if (document == null) {
+           throw new RuntimeException("document cannot be null");
+        }
+
+        WebPageDto webPageDto = WebPageDto.builder()
+                .id(document.getId())
+                .title(document.getTitle())
+                .description(document.getDescription())
+                .url(document.getUrl())
+                .build();
+
+        return webPageDto;
+    }
+
+    public static WebPage docToEntity(WebPageDocument doc) {
+
+        WebPage webPage = WebPage.builder()
+                .id(doc.getId())
+                .url(doc.getUrl())
+                .title(doc.getTitle())
+                .description(doc.getDescription())
+                .recommendations(new HashSet<>())
+                .build();
+
+        return webPage;
+    }
 }

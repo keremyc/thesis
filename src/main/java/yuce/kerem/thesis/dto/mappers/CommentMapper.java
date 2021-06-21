@@ -22,7 +22,6 @@ public class CommentMapper {
                 .createdAt(comment.getCreatedAt())
                 .commentBy(UserMapper.userToUserDto(comment.getCommentBy()))
                 .build();
-
     }
 
     /**

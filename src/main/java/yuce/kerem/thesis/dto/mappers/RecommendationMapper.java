@@ -48,7 +48,6 @@ public class RecommendationMapper {
                 .recommendationText(recDto.getRecommendationText())
                 .liked(recDto.isLiked())
                 .createdAt(recDto.getCreatedAt())
-                .recommendedBy(UserMapper.userDtoToUser(recDto.getRecommendedBy()))
                 .recommendedWebPage(WebPageMapper.webPageDtoToWebPage(recDto.getRecommendedWebPage()))
                 .comments(
                         recDto.getComments().stream()

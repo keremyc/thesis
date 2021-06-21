@@ -14,6 +14,7 @@ import yuce.kerem.thesis.services.impl.AppUserServiceImpl;
 
 @RestController
 @RequestMapping(path = "/registration")
+@CrossOrigin(originPatterns = "*")
 public class RegistrationController {
 
     private final AppUserServiceImpl appUserService;
@@ -26,12 +27,8 @@ public class RegistrationController {
     public ResponseBody register(@RequestBody RegistrationRequest request) {
 
         User newUser = new User();
-        newUser.setAge(request.getAge());
-        newUser.setEduLevel(request.getEduLevel());
-        newUser.setGender(request.getGender());
         newUser.setFirstName(request.getFirstName());
         newUser.setLastName(request.getLastName());
-        newUser.setOccupation(request.getOccupation());
 
         AppUser newAppUser = new AppUser(
                 request.getPassword(),

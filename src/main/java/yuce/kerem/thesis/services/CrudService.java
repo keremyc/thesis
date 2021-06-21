@@ -1,7 +1,5 @@
 package yuce.kerem.thesis.services;
 
-import yuce.kerem.thesis.model.WebPage;
-
 /**
  * @author Kerem(Nurullah)
  * @version 1.0

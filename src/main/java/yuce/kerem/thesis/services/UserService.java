@@ -2,8 +2,6 @@ package yuce.kerem.thesis.services;
 
 import yuce.kerem.thesis.model.User;
 
-import java.util.Optional;
-
 /**
  * @author Kerem(Nurullah)
  * @version 1.0

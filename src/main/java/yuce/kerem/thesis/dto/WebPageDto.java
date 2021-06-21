@@ -2,9 +2,6 @@ package yuce.kerem.thesis.dto;
 
 import lombok.Builder;
 import lombok.Data;
-import yuce.kerem.thesis.model.Recommendation;
-
-import java.util.Set;
 
 /**
  * @author Kerem(Nurullah)
@@ -19,7 +16,7 @@ public class WebPageDto {
     private Long id;
     private String title;
     private String description;
-    private Set<RecommendationDto> recommendations;
+    private String url;
 
     @Override
     public String toString() {

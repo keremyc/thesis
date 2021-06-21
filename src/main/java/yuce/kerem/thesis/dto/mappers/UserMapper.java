@@ -3,8 +3,6 @@ package yuce.kerem.thesis.dto.mappers;
 import yuce.kerem.thesis.dto.UserDto;
 import yuce.kerem.thesis.model.User;
 
-import java.util.stream.Collectors;
-
 /**
  * @author Kerem(Nurullah)
  * @version 1.0
@@ -28,21 +26,6 @@ public class UserMapper {
                 .occupation(userDto.getOccupation())
                 .gender(userDto.getGender())
                 .eduLevel(userDto.getEduLevel())
-                .createdWebPages(
-                        userDto.getCreatedWebPages().stream()
-                        .map( w -> WebPageMapper.webPageDtoToWebPage(w) )
-                        .collect(Collectors.toSet())
-                )
-                .recommendations(
-                        userDto.getRecommendations().stream()
-                        .map( r -> RecommendationMapper.recDtoToRec(r) )
-                        .collect(Collectors.toSet())
-                )
-                .favoritesWebPages(
-                        userDto.getCreatedWebPages().stream()
-                        .map( w -> WebPageMapper.webPageDtoToWebPage(w) )
-                        .collect(Collectors.toSet())
-                )
                 .build();
 
         return user;
@@ -63,21 +46,6 @@ public class UserMapper {
                 .occupation(user.getOccupation())
                 .gender(user.getGender())
                 .eduLevel(user.getEduLevel())
-                .createdWebPages(
-                        user.getCreatedWebPages().stream()
-                        .map( w -> WebPageMapper.webPageToWebPageDto(w) )
-                        .collect(Collectors.toSet())
-                )
-                .recommendations(
-                        user.getRecommendations().stream()
-                        .map( r -> RecommendationMapper.recToRecDto(r) )
-                        .collect(Collectors.toSet())
-                )
-                .favoriteWebPages(
-                        user.getFavoritesWebPages().stream()
-                        .map( w -> WebPageMapper.webPageToWebPageDto(w) )
-                        .collect(Collectors.toSet())
-                )
                 .build();
 
         return userDto;

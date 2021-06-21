@@ -1,0 +1,4 @@
+id,url,title,description
+1,https://www.baeldung.com/maven-multi-module,Multi-Module Project with Maven | Baeldung,Learn about the benefits of using a Maven multi-module project and walk through the setup of a simple example
+2,https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application,Entity To DTO Conversion for a Spring REST API | Baeldung,How to to simpler conversions from Entities to DTOs and back in a Spring REST API.
+3,https://medium.com/swlh/designing-a-multi-layered-architecture-for-building-restful-web-services-with-spring-boot-and-a12ef85b77c9,Designing a Multi-Layered Architecture for Building RESTful Web Services with Spring Boot and Kotlin | The Startup,Dividing a codebase into different levels reduces the effort required for maintenance and simplifies the way the software infrastructure is managed.

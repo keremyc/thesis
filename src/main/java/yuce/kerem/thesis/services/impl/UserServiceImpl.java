@@ -1,14 +1,11 @@
 package yuce.kerem.thesis.services.impl;
 
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import yuce.kerem.thesis.model.AppUser;
 import yuce.kerem.thesis.model.User;
 import yuce.kerem.thesis.repositories.UserRepository;
 import yuce.kerem.thesis.services.AppUserService;
 import yuce.kerem.thesis.services.UserService;
-
-import java.util.Optional;
 
 /**
  * @author Kerem(Nurullah)

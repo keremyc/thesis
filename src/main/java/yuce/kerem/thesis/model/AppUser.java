@@ -2,7 +2,6 @@ package yuce.kerem.thesis.model;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import yuce.kerem.thesis.model.User;
 
 import javax.persistence.*;
 import java.util.Collection;

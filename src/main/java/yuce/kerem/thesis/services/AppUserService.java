@@ -3,8 +3,6 @@ package yuce.kerem.thesis.services;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import yuce.kerem.thesis.model.AppUser;
 
-import java.util.Optional;
-
 /**
  * @author Kerem(Nurullah)
  * @version 1.0

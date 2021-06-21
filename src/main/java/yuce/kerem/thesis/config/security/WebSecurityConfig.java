@@ -36,9 +36,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/").permitAll()
                 .antMatchers("/registration").permitAll()
                 .antMatchers("/h2-console").permitAll()
+                .antMatchers("/webPage/search").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
+                .cors().disable()
                 .httpBasic();
     }
 

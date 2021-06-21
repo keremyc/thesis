@@ -5,7 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.Set;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -37,14 +38,10 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    @OneToMany
-    @JoinColumn(name = "CreatedBy")
-    private Set<WebPage> createdWebPages;
-
     @OneToMany(mappedBy = "recommendedBy")
     private Set<Recommendation> recommendations;
 
-    @ManyToMany
+    @ManyToMany()
     @JoinTable(
             name = "USER_FAVOURITES",
             joinColumns = @JoinColumn(name = "UserId"),

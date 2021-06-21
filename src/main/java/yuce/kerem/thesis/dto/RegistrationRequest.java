@@ -19,9 +19,5 @@ public class RegistrationRequest {
     private String password;
     private String firstName;
     private String lastName;
-    private int age;
-    private EducationLevel eduLevel;
-    private Gender gender;
-    private String occupation;
 
 }
