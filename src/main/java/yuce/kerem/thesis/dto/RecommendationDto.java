@@ -20,12 +20,17 @@ public class RecommendationDto {
     private Long id;
     private String recommendationText;
     private boolean liked;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Date createdAt;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private UserDto recommendedBy;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private WebPageDto recommendedWebPage;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Set<CommentDto> comments;
 
 }

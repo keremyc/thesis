@@ -3,6 +3,7 @@ package yuce.kerem.thesis.dto.mappers;
 import yuce.kerem.thesis.dto.RecommendationDto;
 import yuce.kerem.thesis.model.Recommendation;
 
+import java.util.Date;
 import java.util.stream.Collectors;
 
 /**
@@ -47,13 +48,8 @@ public class RecommendationMapper {
                 .id(recDto.getId())
                 .recommendationText(recDto.getRecommendationText())
                 .liked(recDto.isLiked())
-                .createdAt(recDto.getCreatedAt())
+                .createdAt(new Date())
                 .recommendedWebPage(WebPageMapper.webPageDtoToWebPage(recDto.getRecommendedWebPage()))
-                .comments(
-                        recDto.getComments().stream()
-                        .map( c -> CommentMapper.commentDtoToComment(c) )
-                        .collect(Collectors.toSet())
-                )
                 .build();
 
         return rec;

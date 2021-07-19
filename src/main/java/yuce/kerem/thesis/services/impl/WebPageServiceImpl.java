@@ -1,9 +1,13 @@
 package yuce.kerem.thesis.services.impl;
 
 import org.springframework.stereotype.Service;
+import yuce.kerem.thesis.dto.WebPageDto;
 import yuce.kerem.thesis.model.WebPage;
 import yuce.kerem.thesis.repositories.WebPageRepository;
 import yuce.kerem.thesis.services.WebPageService;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Kerem(Nurullah)
@@ -30,6 +34,15 @@ public class WebPageServiceImpl implements WebPageService {
         return webPageRepository.findById(id).orElseThrow(
                 () -> { throw new RuntimeException("no WebPAge with given id"); }
         );
+    }
+
+
+    public Set<WebPage> findAll() {
+        HashSet<WebPage> webPages = new HashSet<>();
+
+       webPageRepository.findAll().forEach(wp -> webPages.add(wp));
+
+       return webPages;
     }
 
     @Override

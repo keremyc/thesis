@@ -52,4 +52,8 @@ public class AppUserServiceImpl implements AppUserService {
         return null;
     }
 
+    public boolean existsByUsername(String username) {
+        return appUserRepository.existsByUsername(username);
+    }
+
 }

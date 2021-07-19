@@ -1,10 +1,7 @@
 package yuce.kerem.thesis.controllers;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import yuce.kerem.thesis.dto.RecommendationDto;
 import yuce.kerem.thesis.dto.UserDto;
 import yuce.kerem.thesis.dto.WebPageDto;
@@ -25,7 +22,8 @@ import java.util.Set;
  */
 
 @RestController
-@RequestMapping(path = "/users")
+@CrossOrigin(originPatterns = "*")
+@RequestMapping(path = "/api/users")
 public class UserController {
 
     private final UserService userService;

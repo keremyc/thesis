@@ -19,7 +19,8 @@ import yuce.kerem.thesis.services.WebPageService;
  */
 
 @RestController
-@RequestMapping(path = "recs")
+@CrossOrigin(originPatterns = "*")
+@RequestMapping(path = "/api/recs")
 public class RecommendationController {
 
     private final RecommendationService recommendationService;

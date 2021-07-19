@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  */
 
 @RestController
-@RequestMapping(path = "/webPage/search")
+@RequestMapping(path = "/api/search")
 @CrossOrigin(originPatterns = "*")
 public class WebPageSearchController {
 
