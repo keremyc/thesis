@@ -19,6 +19,7 @@ public class UserDto {
     private String lastName;
     private String firstName;
     private int age;
+    private String email;
     private String occupation;
     private Gender gender;
     private EducationLevel eduLevel;

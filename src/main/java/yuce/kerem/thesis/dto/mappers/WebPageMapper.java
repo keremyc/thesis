@@ -41,6 +41,8 @@ public class WebPageMapper {
                 .id(webPage.getId())
                 .title(webPage.getTitle())
                 .description(webPage.getDescription())
+                .numberOfLikes(webPage.getNumberOfLikes())
+                .numberOfDislikes(webPage.getNumberOfDislikes())
                 .url(webPage.getUrl())
                 .build();
 
@@ -69,6 +71,8 @@ public class WebPageMapper {
                 .id(doc.getId())
                 .url(doc.getUrl())
                 .title(doc.getTitle())
+                .numberOfLikes(0)
+                .numberOfDislikes(0)
                 .description(doc.getDescription())
                 .recommendations(new HashSet<>())
                 .build();

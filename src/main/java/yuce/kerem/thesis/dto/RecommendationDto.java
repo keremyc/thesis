@@ -1,5 +1,7 @@
 package yuce.kerem.thesis.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
@@ -27,7 +29,7 @@ public class RecommendationDto {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private UserDto recommendedBy;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private WebPageDto recommendedWebPage;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)

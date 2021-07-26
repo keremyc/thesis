@@ -1,5 +1,6 @@
 package yuce.kerem.thesis.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
 import lombok.Data;
 
@@ -17,6 +18,12 @@ public class WebPageDto {
     private String title;
     private String description;
     private String url;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Integer numberOfLikes;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    private Integer numberOfDislikes;
 
     @Override
     public String toString() {

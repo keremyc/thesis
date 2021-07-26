@@ -13,5 +13,6 @@ public interface WebPageService extends CrudService<WebPage, Long> {
 
     public WebPage getByUrl(String url);
     public Set<WebPage> findAll();
+    public Set<WebPage> findMostPopular5WebSites();
 
 }

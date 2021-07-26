@@ -83,6 +83,7 @@ public class AuthenticationController {
         User user = User.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
+                .email(request.getEmail())
                 .build();
 
         user = userService.save(user);

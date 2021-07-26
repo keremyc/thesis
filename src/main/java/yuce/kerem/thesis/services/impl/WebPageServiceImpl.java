@@ -7,6 +7,7 @@ import yuce.kerem.thesis.repositories.WebPageRepository;
 import yuce.kerem.thesis.services.WebPageService;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -43,6 +44,31 @@ public class WebPageServiceImpl implements WebPageService {
        webPageRepository.findAll().forEach(wp -> webPages.add(wp));
 
        return webPages;
+    }
+
+    @Override
+    public Set<WebPage> findMostPopular5WebSites() {
+        Set<WebPage> popularWebSites = new HashSet<>();
+
+        List<WebPage> webPages = webPageRepository.findAll();
+
+        for (int i = 0; i < 5; i++) {
+            int indexOfTop = 0;
+            int max = 0;
+            for (int j = 0; j < webPages.size(); j++) {
+                if (webPages.get(j).getNumberOfLikes() > max) {
+                    max = webPages.get(j).getNumberOfLikes();
+                    indexOfTop = j;
+                }
+            }
+            if (!webPages.isEmpty()){
+                popularWebSites.add(webPages.get(indexOfTop));
+                webPages.remove(indexOfTop);
+            }
+
+        }
+
+        return popularWebSites;
     }
 
     @Override

@@ -26,6 +26,12 @@ public class WebPage {
     @Column(name = "Url", unique = true)
     private String url;
 
+    @Column(name = "NumberOfLikes")
+    private Integer numberOfLikes = 0;
+
+    @Column(name = "NumberOfDislikes")
+    private Integer numberOfDislikes = 0;
+
     @Lob
     @Column(name = "Description", columnDefinition = "CLOB")
     private String description;
@@ -48,7 +54,33 @@ public class WebPage {
         }
         recommendations.add(recommendation);
         recommendation.setRecommendedWebPage(this);
+
+        if (recommendation.isLiked()) {
+            numberOfLikes++;
+        } else {
+           numberOfDislikes++;
+        }
+
     }
 
+    public Integer getNumberOfDislikes() {
+        int i = 0;
+        for (Recommendation rec: recommendations) {
+            if (!rec.isLiked())
+                i++;
+        }
+
+        return i;
+    }
+
+    public Integer getNumberOfLikes() {
+        int i = 0;
+        for (Recommendation rec: recommendations) {
+            if (rec.isLiked())
+                i++;
+        }
+
+        return i;
+    }
 }
 

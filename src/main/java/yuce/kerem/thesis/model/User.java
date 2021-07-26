@@ -24,6 +24,9 @@ public class User {
     @Column(name = "FirstName", nullable = false)
     private String firstName;
 
+    @Column(name = "Email")
+    private String email;
+
     @Column(name = "Age")
     private int age;
 
@@ -48,6 +51,10 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "WebPageId")
     )
     private Set<WebPage> favoritesWebPages;
+
+    public void addToFavorites(WebPage page) {
+        favoritesWebPages.add(page);
+    }
 
     @Override
     public String toString() {

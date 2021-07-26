@@ -2,6 +2,7 @@ package yuce.kerem.thesis.config.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -52,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/api/auth/*").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
-                .antMatchers("/api/webpages").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/webpages/**").permitAll()
                 .antMatchers("/api/search").permitAll()
                 .anyRequest()
                 .authenticated()
